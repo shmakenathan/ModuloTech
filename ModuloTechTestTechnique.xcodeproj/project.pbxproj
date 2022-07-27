@@ -20,13 +20,14 @@
 		D8467026288EDB77004154E9 /* NetworkManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467025288EDB76004154E9 /* NetworkManagerError.swift */; };
 		D846702A288EE28B004154E9 /* DevicesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467029288EE28B004154E9 /* DevicesResponse.swift */; };
 		D846702C288EE2BE004154E9 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = D846702B288EE2BE004154E9 /* Data.json */; };
-		D846702E288EE6B8004154E9 /* RollerShotterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846702D288EE6B8004154E9 /* RollerShotterViewController.swift */; };
 		D8467030288EEA40004154E9 /* RollerShutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846702F288EEA40004154E9 /* RollerShutter.swift */; };
 		D8467032288EEA5A004154E9 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467031288EEA5A004154E9 /* Light.swift */; };
 		D8467034288EEA6D004154E9 /* Heater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467033288EEA6D004154E9 /* Heater.swift */; };
 		D8467036288EEABD004154E9 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467035288EEABD004154E9 /* ProductType.swift */; };
 		D846703C288FF0FA004154E9 /* DeviceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846703B288FF0FA004154E9 /* DeviceDetailsViewController.swift */; };
 		D846703E288FFBBF004154E9 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D846703D288FFBBF004154E9 /* TestView.xib */; };
+		D8467040289171B5004154E9 /* DeviceListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846703F289171B5004154E9 /* DeviceListTableViewCell.swift */; };
+		D84670432891951A004154E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D84670452891951A004154E9 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +65,15 @@
 		D8467025288EDB76004154E9 /* NetworkManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerError.swift; sourceTree = "<group>"; };
 		D8467029288EE28B004154E9 /* DevicesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesResponse.swift; sourceTree = "<group>"; };
 		D846702B288EE2BE004154E9 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
-		D846702D288EE6B8004154E9 /* RollerShotterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerShotterViewController.swift; sourceTree = "<group>"; };
 		D846702F288EEA40004154E9 /* RollerShutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerShutter.swift; sourceTree = "<group>"; };
 		D8467031288EEA5A004154E9 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		D8467033288EEA6D004154E9 /* Heater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heater.swift; sourceTree = "<group>"; };
 		D8467035288EEABD004154E9 /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
 		D846703B288FF0FA004154E9 /* DeviceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewController.swift; sourceTree = "<group>"; };
 		D846703D288FFBBF004154E9 /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		D846703F289171B5004154E9 /* DeviceListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListTableViewCell.swift; sourceTree = "<group>"; };
+		D84670442891951A004154E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D84670462891952F004154E9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +128,11 @@
 				D8466FF2288EC3FC004154E9 /* SceneDelegate.swift */,
 				D8466FF4288EC3FC004154E9 /* DeviceListViewController.swift */,
 				D846703B288FF0FA004154E9 /* DeviceDetailsViewController.swift */,
+				D846703F289171B5004154E9 /* DeviceListTableViewCell.swift */,
 				D846702F288EEA40004154E9 /* RollerShutter.swift */,
 				D8467035288EEABD004154E9 /* ProductType.swift */,
 				D8467031288EEA5A004154E9 /* Light.swift */,
 				D8467033288EEA6D004154E9 /* Heater.swift */,
-				D846702D288EE6B8004154E9 /* RollerShotterViewController.swift */,
 				D8467023288EDAD4004154E9 /* NetworkService.swift */,
 				D8467029288EE28B004154E9 /* DevicesResponse.swift */,
 				D846702B288EE2BE004154E9 /* Data.json */,
@@ -139,6 +142,7 @@
 				D8467001288EC405004154E9 /* Info.plist */,
 				D8466FF9288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld */,
 				D846703D288FFBBF004154E9 /* TestView.xib */,
+				D84670452891951A004154E9 /* Localizable.strings */,
 			);
 			path = ModuloTechTestTechnique;
 			sourceTree = "<group>";
@@ -246,6 +250,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = D8466FE4288EC3FC004154E9;
 			productRefGroup = D8466FEE288EC3FC004154E9 /* Products */;
@@ -264,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84670432891951A004154E9 /* Localizable.strings in Resources */,
 				D846703E288FFBBF004154E9 /* TestView.xib in Resources */,
 				D8467000288EC405004154E9 /* LaunchScreen.storyboard in Resources */,
 				D8466FFD288EC405004154E9 /* Assets.xcassets in Resources */,
@@ -296,7 +302,7 @@
 				D8467026288EDB77004154E9 /* NetworkManagerError.swift in Sources */,
 				D8466FF1288EC3FC004154E9 /* AppDelegate.swift in Sources */,
 				D846702A288EE28B004154E9 /* DevicesResponse.swift in Sources */,
-				D846702E288EE6B8004154E9 /* RollerShotterViewController.swift in Sources */,
+				D8467040289171B5004154E9 /* DeviceListTableViewCell.swift in Sources */,
 				D8467034288EEA6D004154E9 /* Heater.swift in Sources */,
 				D8467024288EDAD4004154E9 /* NetworkService.swift in Sources */,
 				D8467032288EEA5A004154E9 /* Light.swift in Sources */,
@@ -349,6 +355,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		D84670452891951A004154E9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D84670442891951A004154E9 /* en */,
+				D84670462891952F004154E9 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -356,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -416,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

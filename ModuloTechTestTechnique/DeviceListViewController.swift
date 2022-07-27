@@ -7,33 +7,18 @@
 
 import UIKit
 
-final class DeviceListViewController: UIViewController {
+final class DeviceListViewModel {
+    private let networkService = NetworkService.shared
     
-    private lazy var deviceListTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        return tableView
-    }()
+    var devices: [Device] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                //self.deviceListTableView.reloadData()
+            }
+        }
+    }
     
-    //lazy var nextButton: UIButton = {
-    //    let button = UIButton()
-    //    button.translatesAutoresizingMaskIntoConstraints = false
-    //    button.setTitle("Citation suivante".uppercased(), for: .normal)
-    //    button.backgroundColor = UIColor(red: 0.827, green: 0.102, blue: 0.431, alpha: 1)
-    //    button.addTarget(self, action: #selector(suivant), for: .touchUpInside)
-    //    //button.addAction(.init(handler: {_ in nextCitation() }), for: .touchUpInside)
-    //    return button
-    //}()
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    func fetchDevicesData() {
         Task {
             let url = URL(string: "http://storage42.com/modulotest/data.json")!
             let urlRequest = URLRequest(url: url)
@@ -47,36 +32,46 @@ final class DeviceListViewController: UIViewController {
                 print("FAILED ❌❌❌")
             }
         }
+    }
+}
+
+final class DeviceListViewController: UIViewController {
+    // MARK: - INTERNAL
+    
+    // MARK: Internal - Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         setup()
+        viewModel.fetchDevicesData()
+    }
+    
+    // MARK: - PRIVATE
+    
+    // MARK: Private - Properties
+    
+    private let viewModel = DeviceListViewModel()
+  
+    private lazy var deviceListTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(DeviceListTableViewCell.self, forCellReuseIdentifier: DeviceListTableViewCell.identifier)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
-    }
-    @objc func suivant() {
-        let controller = RollerShotterViewController()
-        controller.modalPresentationStyle = .fullScreen
-        present(controller, animated: true)
-        return
-    }
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        return tableView
+    }()
     
-    
-    private let networkService = NetworkService.shared
-    
-    
-    private var devices: [Device] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.deviceListTableView.reloadData()
-            }
-           
-        }
-    }
+  
 }
 
 
 extension DeviceListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destinationViewController = DeviceDetailsViewController()
-        destinationViewController.device = devices[indexPath.row]
+        destinationViewController.device = viewModel.devices[indexPath.row]
         navigationController?.pushViewController(destinationViewController, animated: true)
     }
     
@@ -85,19 +80,17 @@ extension DeviceListViewController: UITableViewDelegate {
 
 extension DeviceListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        devices.count
+        viewModel.devices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let device = devices[indexPath.row]
-        let deviceCellIdentifier = "DeviceCell"
+        let device = viewModel.devices[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: deviceCellIdentifier) ??
-                    UITableViewCell(style: .default, reuseIdentifier: deviceCellIdentifier)
+        let cell = (tableView.dequeueReusableCell(withIdentifier: DeviceListTableViewCell.identifier) as? DeviceListTableViewCell) ??
+                DeviceListTableViewCell(style: .default, reuseIdentifier: DeviceListTableViewCell.identifier)
         
-        
-        cell.textLabel?.text = device.deviceName
+        cell.configure(model: device)
         return cell
         
     }
@@ -117,6 +110,7 @@ private extension DeviceListViewController {
     
     func setupInterface() {
         view.backgroundColor = .white
+        title = "My Devices"
         view.addSubview(deviceListTableView)
     }
     
