@@ -9,14 +9,24 @@
 /* Begin PBXBuildFile section */
 		D8466FF1288EC3FC004154E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8466FF0288EC3FC004154E9 /* AppDelegate.swift */; };
 		D8466FF3288EC3FC004154E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8466FF2288EC3FC004154E9 /* SceneDelegate.swift */; };
-		D8466FF5288EC3FC004154E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8466FF4288EC3FC004154E9 /* ViewController.swift */; };
-		D8466FF8288EC3FC004154E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8466FF6288EC3FC004154E9 /* Main.storyboard */; };
+		D8466FF5288EC3FC004154E9 /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8466FF4288EC3FC004154E9 /* DeviceListViewController.swift */; };
 		D8466FFB288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8466FF9288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld */; };
 		D8466FFD288EC405004154E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8466FFC288EC405004154E9 /* Assets.xcassets */; };
 		D8467000288EC405004154E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8466FFE288EC405004154E9 /* LaunchScreen.storyboard */; };
 		D846700B288EC405004154E9 /* ModuloTechTestTechniqueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846700A288EC405004154E9 /* ModuloTechTestTechniqueTests.swift */; };
 		D8467015288EC405004154E9 /* ModuloTechTestTechniqueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467014288EC405004154E9 /* ModuloTechTestTechniqueUITests.swift */; };
 		D8467017288EC405004154E9 /* ModuloTechTestTechniqueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467016288EC405004154E9 /* ModuloTechTestTechniqueUITestsLaunchTests.swift */; };
+		D8467024288EDAD4004154E9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467023288EDAD4004154E9 /* NetworkService.swift */; };
+		D8467026288EDB77004154E9 /* NetworkManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467025288EDB76004154E9 /* NetworkManagerError.swift */; };
+		D846702A288EE28B004154E9 /* DevicesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467029288EE28B004154E9 /* DevicesResponse.swift */; };
+		D846702C288EE2BE004154E9 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = D846702B288EE2BE004154E9 /* Data.json */; };
+		D846702E288EE6B8004154E9 /* RollerShotterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846702D288EE6B8004154E9 /* RollerShotterViewController.swift */; };
+		D8467030288EEA40004154E9 /* RollerShutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846702F288EEA40004154E9 /* RollerShutter.swift */; };
+		D8467032288EEA5A004154E9 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467031288EEA5A004154E9 /* Light.swift */; };
+		D8467034288EEA6D004154E9 /* Heater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467033288EEA6D004154E9 /* Heater.swift */; };
+		D8467036288EEABD004154E9 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467035288EEABD004154E9 /* ProductType.swift */; };
+		D846703C288FF0FA004154E9 /* DeviceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846703B288FF0FA004154E9 /* DeviceDetailsViewController.swift */; };
+		D846703E288FFBBF004154E9 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D846703D288FFBBF004154E9 /* TestView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +50,7 @@
 		D8466FED288EC3FC004154E9 /* ModuloTechTestTechnique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModuloTechTestTechnique.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8466FF0288EC3FC004154E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8466FF2288EC3FC004154E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D8466FF4288EC3FC004154E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D8466FF7288EC3FC004154E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8466FF4288EC3FC004154E9 /* DeviceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewController.swift; sourceTree = "<group>"; };
 		D8466FFA288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModuloTechTestTechnique.xcdatamodel; sourceTree = "<group>"; };
 		D8466FFC288EC405004154E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8466FFF288EC405004154E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +60,17 @@
 		D8467010288EC405004154E9 /* ModuloTechTestTechniqueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModuloTechTestTechniqueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8467014288EC405004154E9 /* ModuloTechTestTechniqueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloTechTestTechniqueUITests.swift; sourceTree = "<group>"; };
 		D8467016288EC405004154E9 /* ModuloTechTestTechniqueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloTechTestTechniqueUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D8467023288EDAD4004154E9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D8467025288EDB76004154E9 /* NetworkManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerError.swift; sourceTree = "<group>"; };
+		D8467029288EE28B004154E9 /* DevicesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesResponse.swift; sourceTree = "<group>"; };
+		D846702B288EE2BE004154E9 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
+		D846702D288EE6B8004154E9 /* RollerShotterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerShotterViewController.swift; sourceTree = "<group>"; };
+		D846702F288EEA40004154E9 /* RollerShutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerShutter.swift; sourceTree = "<group>"; };
+		D8467031288EEA5A004154E9 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		D8467033288EEA6D004154E9 /* Heater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heater.swift; sourceTree = "<group>"; };
+		D8467035288EEABD004154E9 /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
+		D846703B288FF0FA004154E9 /* DeviceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewController.swift; sourceTree = "<group>"; };
+		D846703D288FFBBF004154E9 /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +123,22 @@
 			children = (
 				D8466FF0288EC3FC004154E9 /* AppDelegate.swift */,
 				D8466FF2288EC3FC004154E9 /* SceneDelegate.swift */,
-				D8466FF4288EC3FC004154E9 /* ViewController.swift */,
-				D8466FF6288EC3FC004154E9 /* Main.storyboard */,
+				D8466FF4288EC3FC004154E9 /* DeviceListViewController.swift */,
+				D846703B288FF0FA004154E9 /* DeviceDetailsViewController.swift */,
+				D846702F288EEA40004154E9 /* RollerShutter.swift */,
+				D8467035288EEABD004154E9 /* ProductType.swift */,
+				D8467031288EEA5A004154E9 /* Light.swift */,
+				D8467033288EEA6D004154E9 /* Heater.swift */,
+				D846702D288EE6B8004154E9 /* RollerShotterViewController.swift */,
+				D8467023288EDAD4004154E9 /* NetworkService.swift */,
+				D8467029288EE28B004154E9 /* DevicesResponse.swift */,
+				D846702B288EE2BE004154E9 /* Data.json */,
+				D8467025288EDB76004154E9 /* NetworkManagerError.swift */,
 				D8466FFC288EC405004154E9 /* Assets.xcassets */,
 				D8466FFE288EC405004154E9 /* LaunchScreen.storyboard */,
 				D8467001288EC405004154E9 /* Info.plist */,
 				D8466FF9288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld */,
+				D846703D288FFBBF004154E9 /* TestView.xib */,
 			);
 			path = ModuloTechTestTechnique;
 			sourceTree = "<group>";
@@ -234,9 +264,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D846703E288FFBBF004154E9 /* TestView.xib in Resources */,
 				D8467000288EC405004154E9 /* LaunchScreen.storyboard in Resources */,
 				D8466FFD288EC405004154E9 /* Assets.xcassets in Resources */,
-				D8466FF8288EC3FC004154E9 /* Main.storyboard in Resources */,
+				D846702C288EE2BE004154E9 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +292,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8466FF5288EC3FC004154E9 /* ViewController.swift in Sources */,
+				D8466FF5288EC3FC004154E9 /* DeviceListViewController.swift in Sources */,
+				D8467026288EDB77004154E9 /* NetworkManagerError.swift in Sources */,
 				D8466FF1288EC3FC004154E9 /* AppDelegate.swift in Sources */,
+				D846702A288EE28B004154E9 /* DevicesResponse.swift in Sources */,
+				D846702E288EE6B8004154E9 /* RollerShotterViewController.swift in Sources */,
+				D8467034288EEA6D004154E9 /* Heater.swift in Sources */,
+				D8467024288EDAD4004154E9 /* NetworkService.swift in Sources */,
+				D8467032288EEA5A004154E9 /* Light.swift in Sources */,
+				D846703C288FF0FA004154E9 /* DeviceDetailsViewController.swift in Sources */,
 				D8466FFB288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld in Sources */,
+				D8467030288EEA40004154E9 /* RollerShutter.swift in Sources */,
 				D8466FF3288EC3FC004154E9 /* SceneDelegate.swift in Sources */,
+				D8467036288EEABD004154E9 /* ProductType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +341,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D8466FF6288EC3FC004154E9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D8466FF7288EC3FC004154E9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D8466FFE288EC405004154E9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +478,6 @@
 				INFOPLIST_FILE = ModuloTechTestTechnique/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +505,6 @@
 				INFOPLIST_FILE = ModuloTechTestTechnique/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
