@@ -7,11 +7,6 @@
 
 
 
-enum NetworkServiceError: Error {
-    case failedToFetchUnknownError
-    case failedToFetchInvalidStatusCode
-    case failedToFetchDecodingFailed
-}
 
 
 import Foundation

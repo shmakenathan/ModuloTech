@@ -10,7 +10,7 @@ import UIKit
 
 final class DeviceDetailsViewController: UIViewController {
     
-    var device: Device?
+    var deviceViewModel: DeviceViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ final class DeviceDetailsViewController: UIViewController {
     
     private lazy var iconAndTitleStackView: UIStackView = {
         let titleLabel = UILabel()
-        titleLabel.text = device?.deviceName
+        titleLabel.text = deviceViewModel?.deviceName
         titleLabel.textAlignment = .center
         
         let stackView = UIStackView(
@@ -61,27 +61,10 @@ final class DeviceDetailsViewController: UIViewController {
     }()
     
     private lazy var iconImageView: UIImageView = {
-        var image : UIImage?
-        switch device?.productType {
-        case .none:
-            break
-        case .heater:
-            switch device?.mode {
-            case.none:
-                break
-            case .on:
-                image = UIImage(named: "DeviceHeaterOnIcon")
-            case .off:
-                image = UIImage(named: "DeviceHeaterOffIcon")
-            }
-            
-        case .light:
-            image = UIImage(named: "DeviceLightOnIcon")
-        case .rollerShutter:
-            image = UIImage(named: "DeviceRollerShutterIcon")
+        let imageView = UIImageView()
+        if let iconImageName = deviceViewModel?.iconImageName {
+            imageView.image = UIImage(named: iconImageName)
         }
-        
-        let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +79,7 @@ final class DeviceDetailsViewController: UIViewController {
     private lazy var steeringControlsStackView: UIStackView = {
         let stackView = UIStackView()
         
-        switch device?.productType {
+        switch deviceViewModel?.device.productType {
         case .none:
             break
         case .heater:
@@ -142,7 +125,7 @@ final class DeviceDetailsViewController: UIViewController {
         controlLabel.textAlignment = .left
         
         let controlSwitch = UISwitch()
-        controlSwitch.isOn = device?.mode == .on
+        controlSwitch.isOn = deviceViewModel?.device.mode == .on
         
         let stackView = UIStackView(arrangedSubviews: [
             controlLabel,

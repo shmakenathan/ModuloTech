@@ -28,6 +28,16 @@
 		D846703E288FFBBF004154E9 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D846703D288FFBBF004154E9 /* TestView.xib */; };
 		D8467040289171B5004154E9 /* DeviceListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846703F289171B5004154E9 /* DeviceListTableViewCell.swift */; };
 		D84670432891951A004154E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D84670452891951A004154E9 /* Localizable.strings */; };
+		D846705328919896004154E9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D846705228919896004154E9 /* RxCocoa */; };
+		D846705528919896004154E9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D846705428919896004154E9 /* RxSwift */; };
+		D846705A28919EB2004154E9 /* DeviceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846705928919EB2004154E9 /* DeviceListViewModel.swift */; };
+		D846705D28919F1B004154E9 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846705C28919F1B004154E9 /* NetworkServiceError.swift */; };
+		D84670662891A31D004154E9 /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84670652891A31D004154E9 /* DeviceViewModel.swift */; };
+		D84670692891B8CE004154E9 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84670682891B8CE004154E9 /* Device.swift */; };
+		D846706D2891B901004154E9 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846706C2891B901004154E9 /* ProductType.swift */; };
+		D846706F2891B926004154E9 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846706E2891B926004154E9 /* Mode.swift */; };
+		D84670712891B936004154E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84670702891B936004154E9 /* User.swift */; };
+		D84670732891B954004154E9 /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84670722891B954004154E9 /* Adress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +84,14 @@
 		D846703F289171B5004154E9 /* DeviceListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListTableViewCell.swift; sourceTree = "<group>"; };
 		D84670442891951A004154E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D84670462891952F004154E9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D846705928919EB2004154E9 /* DeviceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewModel.swift; sourceTree = "<group>"; };
+		D846705C28919F1B004154E9 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		D84670652891A31D004154E9 /* DeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
+		D84670682891B8CE004154E9 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		D846706C2891B901004154E9 /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
+		D846706E2891B926004154E9 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		D84670702891B936004154E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D84670722891B954004154E9 /* Adress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D846705528919896004154E9 /* RxSwift in Frameworks */,
+				D846705328919896004154E9 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,17 +144,15 @@
 		D8466FEF288EC3FC004154E9 /* ModuloTechTestTechnique */ = {
 			isa = PBXGroup;
 			children = (
+				D846705828919E9C004154E9 /* View */,
+				D846705628919E91004154E9 /* ViewModel */,
+				D846705728919E98004154E9 /* Model */,
 				D8466FF0288EC3FC004154E9 /* AppDelegate.swift */,
 				D8466FF2288EC3FC004154E9 /* SceneDelegate.swift */,
-				D8466FF4288EC3FC004154E9 /* DeviceListViewController.swift */,
-				D846703B288FF0FA004154E9 /* DeviceDetailsViewController.swift */,
-				D846703F289171B5004154E9 /* DeviceListTableViewCell.swift */,
 				D846702F288EEA40004154E9 /* RollerShutter.swift */,
 				D8467035288EEABD004154E9 /* ProductType.swift */,
 				D8467031288EEA5A004154E9 /* Light.swift */,
 				D8467033288EEA6D004154E9 /* Heater.swift */,
-				D8467023288EDAD4004154E9 /* NetworkService.swift */,
-				D8467029288EE28B004154E9 /* DevicesResponse.swift */,
 				D846702B288EE2BE004154E9 /* Data.json */,
 				D8467025288EDB76004154E9 /* NetworkManagerError.swift */,
 				D8466FFC288EC405004154E9 /* Assets.xcassets */,
@@ -164,6 +182,112 @@
 			path = ModuloTechTestTechniqueUITests;
 			sourceTree = "<group>";
 		};
+		D846705628919E91004154E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D84670642891A30F004154E9 /* Shared */,
+				D846706328919F9F004154E9 /* DeviceListViewModel */,
+				D846706228919F92004154E9 /* DeviceDetailsViewModel */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D846705728919E98004154E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D846705F28919F38004154E9 /* DataModel */,
+				D846705E28919F2E004154E9 /* Service */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D846705828919E9C004154E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D84670672891A62C004154E9 /* NavigationCoordinator */,
+				D846706028919F5E004154E9 /* DeviceListView */,
+				D846706128919F80004154E9 /* DeviceDetailsView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D846705B28919F0B004154E9 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				D8467023288EDAD4004154E9 /* NetworkService.swift */,
+				D846705C28919F1B004154E9 /* NetworkServiceError.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		D846705E28919F2E004154E9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D846705B28919F0B004154E9 /* NetworkService */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D846705F28919F38004154E9 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8467029288EE28B004154E9 /* DevicesResponse.swift */,
+				D84670702891B936004154E9 /* User.swift */,
+				D84670722891B954004154E9 /* Adress.swift */,
+				D846706C2891B901004154E9 /* ProductType.swift */,
+				D846706E2891B926004154E9 /* Mode.swift */,
+				D84670682891B8CE004154E9 /* Device.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		D846706028919F5E004154E9 /* DeviceListView */ = {
+			isa = PBXGroup;
+			children = (
+				D846703F289171B5004154E9 /* DeviceListTableViewCell.swift */,
+				D8466FF4288EC3FC004154E9 /* DeviceListViewController.swift */,
+			);
+			path = DeviceListView;
+			sourceTree = "<group>";
+		};
+		D846706128919F80004154E9 /* DeviceDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				D846703B288FF0FA004154E9 /* DeviceDetailsViewController.swift */,
+			);
+			path = DeviceDetailsView;
+			sourceTree = "<group>";
+		};
+		D846706228919F92004154E9 /* DeviceDetailsViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeviceDetailsViewModel;
+			sourceTree = "<group>";
+		};
+		D846706328919F9F004154E9 /* DeviceListViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D846705928919EB2004154E9 /* DeviceListViewModel.swift */,
+			);
+			path = DeviceListViewModel;
+			sourceTree = "<group>";
+		};
+		D84670642891A30F004154E9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D84670652891A31D004154E9 /* DeviceViewModel.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D84670672891A62C004154E9 /* NavigationCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NavigationCoordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +304,10 @@
 			dependencies = (
 			);
 			name = ModuloTechTestTechnique;
+			packageProductDependencies = (
+				D846705228919896004154E9 /* RxCocoa */,
+				D846705428919896004154E9 /* RxSwift */,
+			);
 			productName = ModuloTechTestTechnique;
 			productReference = D8466FED288EC3FC004154E9 /* ModuloTechTestTechnique.app */;
 			productType = "com.apple.product-type.application";
@@ -253,6 +381,9 @@
 				fr,
 			);
 			mainGroup = D8466FE4288EC3FC004154E9;
+			packageReferences = (
+				D846705128919896004154E9 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = D8466FEE288EC3FC004154E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -301,13 +432,21 @@
 				D8466FF5288EC3FC004154E9 /* DeviceListViewController.swift in Sources */,
 				D8467026288EDB77004154E9 /* NetworkManagerError.swift in Sources */,
 				D8466FF1288EC3FC004154E9 /* AppDelegate.swift in Sources */,
+				D84670692891B8CE004154E9 /* Device.swift in Sources */,
 				D846702A288EE28B004154E9 /* DevicesResponse.swift in Sources */,
 				D8467040289171B5004154E9 /* DeviceListTableViewCell.swift in Sources */,
 				D8467034288EEA6D004154E9 /* Heater.swift in Sources */,
+				D846706D2891B901004154E9 /* ProductType.swift in Sources */,
+				D84670712891B936004154E9 /* User.swift in Sources */,
 				D8467024288EDAD4004154E9 /* NetworkService.swift in Sources */,
 				D8467032288EEA5A004154E9 /* Light.swift in Sources */,
 				D846703C288FF0FA004154E9 /* DeviceDetailsViewController.swift in Sources */,
 				D8466FFB288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld in Sources */,
+				D846705D28919F1B004154E9 /* NetworkServiceError.swift in Sources */,
+				D846705A28919EB2004154E9 /* DeviceListViewModel.swift in Sources */,
+				D846706F2891B926004154E9 /* Mode.swift in Sources */,
+				D84670662891A31D004154E9 /* DeviceViewModel.swift in Sources */,
+				D84670732891B954004154E9 /* Adress.swift in Sources */,
 				D8467030288EEA40004154E9 /* RollerShutter.swift in Sources */,
 				D8466FF3288EC3FC004154E9 /* SceneDelegate.swift in Sources */,
 				D8467036288EEABD004154E9 /* ProductType.swift in Sources */,
@@ -653,6 +792,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D846705128919896004154E9 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D846705228919896004154E9 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D846705128919896004154E9 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		D846705428919896004154E9 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D846705128919896004154E9 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D8466FF9288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld */ = {
