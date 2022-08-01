@@ -17,13 +17,7 @@
 		D8467015288EC405004154E9 /* ModuloTechTestTechniqueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467014288EC405004154E9 /* ModuloTechTestTechniqueUITests.swift */; };
 		D8467017288EC405004154E9 /* ModuloTechTestTechniqueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467016288EC405004154E9 /* ModuloTechTestTechniqueUITestsLaunchTests.swift */; };
 		D8467024288EDAD4004154E9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467023288EDAD4004154E9 /* NetworkService.swift */; };
-		D8467026288EDB77004154E9 /* NetworkManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467025288EDB76004154E9 /* NetworkManagerError.swift */; };
 		D846702A288EE28B004154E9 /* DevicesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467029288EE28B004154E9 /* DevicesResponse.swift */; };
-		D846702C288EE2BE004154E9 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = D846702B288EE2BE004154E9 /* Data.json */; };
-		D8467030288EEA40004154E9 /* RollerShutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846702F288EEA40004154E9 /* RollerShutter.swift */; };
-		D8467032288EEA5A004154E9 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467031288EEA5A004154E9 /* Light.swift */; };
-		D8467034288EEA6D004154E9 /* Heater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467033288EEA6D004154E9 /* Heater.swift */; };
-		D8467036288EEABD004154E9 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8467035288EEABD004154E9 /* ProductType.swift */; };
 		D846703C288FF0FA004154E9 /* DeviceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846703B288FF0FA004154E9 /* DeviceDetailsViewController.swift */; };
 		D846703E288FFBBF004154E9 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D846703D288FFBBF004154E9 /* TestView.xib */; };
 		D8467040289171B5004154E9 /* DeviceListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846703F289171B5004154E9 /* DeviceListTableViewCell.swift */; };
@@ -72,13 +66,7 @@
 		D8467014288EC405004154E9 /* ModuloTechTestTechniqueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloTechTestTechniqueUITests.swift; sourceTree = "<group>"; };
 		D8467016288EC405004154E9 /* ModuloTechTestTechniqueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloTechTestTechniqueUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D8467023288EDAD4004154E9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		D8467025288EDB76004154E9 /* NetworkManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerError.swift; sourceTree = "<group>"; };
 		D8467029288EE28B004154E9 /* DevicesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesResponse.swift; sourceTree = "<group>"; };
-		D846702B288EE2BE004154E9 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
-		D846702F288EEA40004154E9 /* RollerShutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerShutter.swift; sourceTree = "<group>"; };
-		D8467031288EEA5A004154E9 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
-		D8467033288EEA6D004154E9 /* Heater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heater.swift; sourceTree = "<group>"; };
-		D8467035288EEABD004154E9 /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
 		D846703B288FF0FA004154E9 /* DeviceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewController.swift; sourceTree = "<group>"; };
 		D846703D288FFBBF004154E9 /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 		D846703F289171B5004154E9 /* DeviceListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListTableViewCell.swift; sourceTree = "<group>"; };
@@ -149,12 +137,6 @@
 				D846705728919E98004154E9 /* Model */,
 				D8466FF0288EC3FC004154E9 /* AppDelegate.swift */,
 				D8466FF2288EC3FC004154E9 /* SceneDelegate.swift */,
-				D846702F288EEA40004154E9 /* RollerShutter.swift */,
-				D8467035288EEABD004154E9 /* ProductType.swift */,
-				D8467031288EEA5A004154E9 /* Light.swift */,
-				D8467033288EEA6D004154E9 /* Heater.swift */,
-				D846702B288EE2BE004154E9 /* Data.json */,
-				D8467025288EDB76004154E9 /* NetworkManagerError.swift */,
 				D8466FFC288EC405004154E9 /* Assets.xcassets */,
 				D8466FFE288EC405004154E9 /* LaunchScreen.storyboard */,
 				D8467001288EC405004154E9 /* Info.plist */,
@@ -404,7 +386,6 @@
 				D846703E288FFBBF004154E9 /* TestView.xib in Resources */,
 				D8467000288EC405004154E9 /* LaunchScreen.storyboard in Resources */,
 				D8466FFD288EC405004154E9 /* Assets.xcassets in Resources */,
-				D846702C288EE2BE004154E9 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,16 +411,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8466FF5288EC3FC004154E9 /* DeviceListViewController.swift in Sources */,
-				D8467026288EDB77004154E9 /* NetworkManagerError.swift in Sources */,
 				D8466FF1288EC3FC004154E9 /* AppDelegate.swift in Sources */,
 				D84670692891B8CE004154E9 /* Device.swift in Sources */,
 				D846702A288EE28B004154E9 /* DevicesResponse.swift in Sources */,
 				D8467040289171B5004154E9 /* DeviceListTableViewCell.swift in Sources */,
-				D8467034288EEA6D004154E9 /* Heater.swift in Sources */,
 				D846706D2891B901004154E9 /* ProductType.swift in Sources */,
 				D84670712891B936004154E9 /* User.swift in Sources */,
 				D8467024288EDAD4004154E9 /* NetworkService.swift in Sources */,
-				D8467032288EEA5A004154E9 /* Light.swift in Sources */,
 				D846703C288FF0FA004154E9 /* DeviceDetailsViewController.swift in Sources */,
 				D8466FFB288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld in Sources */,
 				D846705D28919F1B004154E9 /* NetworkServiceError.swift in Sources */,
@@ -447,9 +425,7 @@
 				D846706F2891B926004154E9 /* Mode.swift in Sources */,
 				D84670662891A31D004154E9 /* DeviceViewModel.swift in Sources */,
 				D84670732891B954004154E9 /* Adress.swift in Sources */,
-				D8467030288EEA40004154E9 /* RollerShutter.swift in Sources */,
 				D8466FF3288EC3FC004154E9 /* SceneDelegate.swift in Sources */,
-				D8467036288EEABD004154E9 /* ProductType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

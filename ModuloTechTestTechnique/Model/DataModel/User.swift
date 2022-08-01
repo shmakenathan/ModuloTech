@@ -5,4 +5,8 @@
 //  Created by Nathan on 27/07/2022.
 //
 
-import Foundation
+struct User: Codable {
+    let firstName, lastName: String
+    let address: Address
+    let birthDate: Int
+}

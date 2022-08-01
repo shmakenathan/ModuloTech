@@ -4,5 +4,8 @@
 //
 //  Created by Nathan on 27/07/2022.
 //
-
-import Foundation
+struct Address: Codable {
+    let city: String
+    let postalCode: Int
+    let street, streetCode, country: String
+}

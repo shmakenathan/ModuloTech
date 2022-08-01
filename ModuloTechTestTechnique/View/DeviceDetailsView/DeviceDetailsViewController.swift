@@ -208,16 +208,19 @@ final class DeviceDetailsViewController: UIViewController {
     
     private lazy var stepperControlView: UIView = {
         let temperatureLabel = UILabel()
+        temperatureLabel.text = "29"
         let stepper = UIStepper()
         let stackView = UIStackView(arrangedSubviews: [
             temperatureLabel,
             stepper
             
         ])
+        temperatureLabel.backgroundColor = .black
         
-        
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.alignment = .center
+        stackView.spacing = 10
+        stackView.distribution = .fill
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -227,8 +230,7 @@ final class DeviceDetailsViewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: view.topAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            view.heightAnchor.constraint(equalToConstant: 70)
+            temperatureLabel.heightAnchor.constraint(equalToConstant: 140)
         ])
         return UIView()
     }()

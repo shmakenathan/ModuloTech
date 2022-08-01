@@ -5,4 +5,7 @@
 //  Created by Nathan on 27/07/2022.
 //
 
-import Foundation
+enum Mode: String, Codable {
+    case on = "ON"
+    case off = "OFF"
+}
