@@ -32,6 +32,8 @@
 		D846706F2891B926004154E9 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846706E2891B926004154E9 /* Mode.swift */; };
 		D84670712891B936004154E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84670702891B936004154E9 /* User.swift */; };
 		D84670732891B954004154E9 /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84670722891B954004154E9 /* Adress.swift */; };
+		D87F543C2897D423005261A1 /* CountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543B2897D423005261A1 /* CountViewController.swift */; };
+		D87F543E28986726005261A1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543D28986726005261A1 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		D846706E2891B926004154E9 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		D84670702891B936004154E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D84670722891B954004154E9 /* Adress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
+		D87F543B2897D423005261A1 /* CountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewController.swift; sourceTree = "<group>"; };
+		D87F543D28986726005261A1 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 				D8467001288EC405004154E9 /* Info.plist */,
 				D8466FF9288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld */,
 				D846703D288FFBBF004154E9 /* TestView.xib */,
+				D87F543D28986726005261A1 /* Strings.swift */,
 				D84670452891951A004154E9 /* Localizable.strings */,
 			);
 			path = ModuloTechTestTechnique;
@@ -189,6 +194,7 @@
 				D84670672891A62C004154E9 /* NavigationCoordinator */,
 				D846706028919F5E004154E9 /* DeviceListView */,
 				D846706128919F80004154E9 /* DeviceDetailsView */,
+				D87F543B2897D423005261A1 /* CountViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 			files = (
 				D8466FF5288EC3FC004154E9 /* DeviceListViewController.swift in Sources */,
 				D8466FF1288EC3FC004154E9 /* AppDelegate.swift in Sources */,
+				D87F543C2897D423005261A1 /* CountViewController.swift in Sources */,
 				D84670692891B8CE004154E9 /* Device.swift in Sources */,
 				D846702A288EE28B004154E9 /* DevicesResponse.swift in Sources */,
 				D8467040289171B5004154E9 /* DeviceListTableViewCell.swift in Sources */,
@@ -419,6 +426,7 @@
 				D84670712891B936004154E9 /* User.swift in Sources */,
 				D8467024288EDAD4004154E9 /* NetworkService.swift in Sources */,
 				D846703C288FF0FA004154E9 /* DeviceDetailsViewController.swift in Sources */,
+				D87F543E28986726005261A1 /* Strings.swift in Sources */,
 				D8466FFB288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld in Sources */,
 				D846705D28919F1B004154E9 /* NetworkServiceError.swift in Sources */,
 				D846705A28919EB2004154E9 /* DeviceListViewModel.swift in Sources */,

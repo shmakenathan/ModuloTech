@@ -16,7 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let navigationRootViewController = DeviceListViewController()
+        
+        // TODO: change once test is done
+      
+        let navigationRootViewController = DeviceListViewController() // to uncomment
+        // let navigationRootViewController = CountViewController() // to comment
+        
         let windowRootViewController = UINavigationController(rootViewController: navigationRootViewController)
         window?.rootViewController = windowRootViewController
         window?.makeKeyAndVisible()

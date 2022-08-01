@@ -5,3 +5,5 @@
   Created by Nathan on 27/07/2022.
   
 */
+
+"error_failed_ingredient_is_empty" = "You have to add ingredient";

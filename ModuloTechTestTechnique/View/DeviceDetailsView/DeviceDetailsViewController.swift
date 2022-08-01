@@ -29,12 +29,10 @@ final class DeviceDetailsViewController: UIViewController {
                 UIView()
             ]
         )
-        
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.spacing = 100
-        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -43,19 +41,16 @@ final class DeviceDetailsViewController: UIViewController {
         let titleLabel = UILabel()
         titleLabel.text = deviceViewModel?.deviceName
         titleLabel.textAlignment = .center
-        
         let stackView = UIStackView(
             arrangedSubviews: [
                 iconImageView,
                 titleLabel
             ]
         )
-        
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.spacing = 20
-        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -66,19 +61,15 @@ final class DeviceDetailsViewController: UIViewController {
             imageView.image = UIImage(named: iconImageName)
         }
         imageView.contentMode = .scaleAspectFit
-        
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             imageView.heightAnchor.constraint(equalToConstant: 150)
         ])
-        
         return imageView
     }()
     
     private lazy var steeringControlsStackView: UIStackView = {
         let stackView = UIStackView()
-        
         switch deviceViewModel?.device.productType {
         case .none:
             break
@@ -103,15 +94,10 @@ final class DeviceDetailsViewController: UIViewController {
                 ]
             )
         }
-        
-        
-        
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.alignment = .fill
-        
         stackView.spacing = 20
-        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -180,15 +166,17 @@ final class DeviceDetailsViewController: UIViewController {
         
         
         stackView.axis = .horizontal
+        stackView.distribution = .fill
         stackView.alignment = .center
+        stackView.spacing = 5
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            controlEndLabel.widthAnchor.constraint(equalToConstant: 30),
-            controlBeginLabel.widthAnchor.constraint(equalToConstant: 30),
+            //controlEndLabel.widthAnchor.constraint(equalToConstant: 20),
+           // controlBeginLabel.widthAnchor.constraint(equalToConstant: 20),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             stackView.topAnchor.constraint(equalTo: view.topAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
@@ -199,27 +187,28 @@ final class DeviceDetailsViewController: UIViewController {
         
         view.layer.cornerRadius = 16
         
-        
-        controlSlider.backgroundColor = .gray // view.layer.shadowColor = .
+       
         
         return view
     }()
     
     
     private lazy var stepperControlView: UIView = {
+        let view = UIView()
         let temperatureLabel = UILabel()
+        temperatureLabel.font = UIFont.systemFont(ofSize: 20)
         temperatureLabel.text = "29"
+        
         let stepper = UIStepper()
         let stackView = UIStackView(arrangedSubviews: [
             temperatureLabel,
             stepper
             
         ])
-        temperatureLabel.backgroundColor = .black
         
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = 10
+        stackView.spacing = 5
         stackView.distribution = .fill
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -230,15 +219,24 @@ final class DeviceDetailsViewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: view.topAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            temperatureLabel.heightAnchor.constraint(equalToConstant: 140)
+            temperatureLabel.heightAnchor.constraint(equalToConstant: 80)
         ])
-        return UIView()
+        return view
     }()
     
     
     
     
 }
+
+
+
+
+
+
+
+
+
 
 private extension DeviceDetailsViewController {
     func setup() {
@@ -248,14 +246,13 @@ private extension DeviceDetailsViewController {
     
     func setupInterface() {
         view.backgroundColor = .white
-        
         view.addSubview(mainStackView)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
             mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
