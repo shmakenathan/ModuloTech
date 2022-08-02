@@ -10,7 +10,6 @@
 		D8466FF1288EC3FC004154E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8466FF0288EC3FC004154E9 /* AppDelegate.swift */; };
 		D8466FF3288EC3FC004154E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8466FF2288EC3FC004154E9 /* SceneDelegate.swift */; };
 		D8466FF5288EC3FC004154E9 /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8466FF4288EC3FC004154E9 /* DeviceListViewController.swift */; };
-		D8466FFB288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8466FF9288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld */; };
 		D8466FFD288EC405004154E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8466FFC288EC405004154E9 /* Assets.xcassets */; };
 		D8467000288EC405004154E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8466FFE288EC405004154E9 /* LaunchScreen.storyboard */; };
 		D846700B288EC405004154E9 /* ModuloTechTestTechniqueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846700A288EC405004154E9 /* ModuloTechTestTechniqueTests.swift */; };
@@ -34,6 +33,7 @@
 		D84670732891B954004154E9 /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84670722891B954004154E9 /* Adress.swift */; };
 		D87F543C2897D423005261A1 /* CountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543B2897D423005261A1 /* CountViewController.swift */; };
 		D87F543E28986726005261A1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543D28986726005261A1 /* Strings.swift */; };
+		D87F544028989E13005261A1 /* DeviceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543F28989E13005261A1 /* DeviceDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 		D8466FF0288EC3FC004154E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8466FF2288EC3FC004154E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D8466FF4288EC3FC004154E9 /* DeviceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewController.swift; sourceTree = "<group>"; };
-		D8466FFA288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModuloTechTestTechnique.xcdatamodel; sourceTree = "<group>"; };
 		D8466FFC288EC405004154E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8466FFF288EC405004154E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8467001288EC405004154E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		D84670722891B954004154E9 /* Adress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
 		D87F543B2897D423005261A1 /* CountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewController.swift; sourceTree = "<group>"; };
 		D87F543D28986726005261A1 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		D87F543F28989E13005261A1 /* DeviceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,6 @@
 				D8466FFC288EC405004154E9 /* Assets.xcassets */,
 				D8466FFE288EC405004154E9 /* LaunchScreen.storyboard */,
 				D8467001288EC405004154E9 /* Info.plist */,
-				D8466FF9288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld */,
 				D846703D288FFBBF004154E9 /* TestView.xib */,
 				D87F543D28986726005261A1 /* Strings.swift */,
 				D84670452891951A004154E9 /* Localizable.strings */,
@@ -249,6 +248,7 @@
 		D846706228919F92004154E9 /* DeviceDetailsViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D87F543F28989E13005261A1 /* DeviceDetailsViewModel.swift */,
 			);
 			path = DeviceDetailsViewModel;
 			sourceTree = "<group>";
@@ -427,8 +427,8 @@
 				D8467024288EDAD4004154E9 /* NetworkService.swift in Sources */,
 				D846703C288FF0FA004154E9 /* DeviceDetailsViewController.swift in Sources */,
 				D87F543E28986726005261A1 /* Strings.swift in Sources */,
-				D8466FFB288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld in Sources */,
 				D846705D28919F1B004154E9 /* NetworkServiceError.swift in Sources */,
+				D87F544028989E13005261A1 /* DeviceDetailsViewModel.swift in Sources */,
 				D846705A28919EB2004154E9 /* DeviceListViewModel.swift in Sources */,
 				D846706F2891B926004154E9 /* Mode.swift in Sources */,
 				D84670662891A31D004154E9 /* DeviceViewModel.swift in Sources */,
@@ -800,19 +800,6 @@
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		D8466FF9288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D8466FFA288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodel */,
-			);
-			currentVersion = D8466FFA288EC3FC004154E9 /* ModuloTechTestTechnique.xcdatamodel */;
-			path = ModuloTechTestTechnique.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D8466FE5288EC3FC004154E9 /* Project object */;
 }

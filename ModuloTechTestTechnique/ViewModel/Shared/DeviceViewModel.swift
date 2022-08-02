@@ -74,11 +74,11 @@ final class DeviceViewModel {
         
         switch position {
         case 100:
-            return "Opened"
+            return Strings.opened
         case 1...99:
-            return "Opened at \(position)%"
+            return Strings.openedAt + String(position) + "%"
         case 0:
-            return "Closed"
+            return Strings.closed
         default:
             return undefinedDescription
         }
@@ -89,8 +89,8 @@ final class DeviceViewModel {
         guard let mode = device.mode else { return undefinedDescription }
         
         switch mode {
-        case .on: return "On"
-        case .off: return "Off"
+        case .on: return Strings.on
+        case .off: return Strings.off
         }
     }
     
@@ -100,7 +100,7 @@ final class DeviceViewModel {
         
         switch mode {
         case .on: return "On at \(device.temperature?.description ?? "--")°C"
-        case .off: return "Off"
+        case .off: return Strings.off
         }
     }
 }

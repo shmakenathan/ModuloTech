@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import RxSwift
+import RxCocoa
 
 final class DeviceDetailsViewController: UIViewController {
     
@@ -14,10 +15,7 @@ final class DeviceDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
-        
-        
     }
     
     
@@ -36,6 +34,7 @@ final class DeviceDetailsViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
     
     private lazy var iconAndTitleStackView: UIStackView = {
         let titleLabel = UILabel()
@@ -105,14 +104,11 @@ final class DeviceDetailsViewController: UIViewController {
     
     private lazy var switchControlView: UIView = {
         let view = UIView()
-        
         let controlLabel = UILabel()
         controlLabel.text = "On/Off"
         controlLabel.textAlignment = .left
-        
         let controlSwitch = UISwitch()
         controlSwitch.isOn = deviceViewModel?.device.mode == .on
-        
         let stackView = UIStackView(arrangedSubviews: [
             controlLabel,
             controlSwitch
@@ -122,23 +118,16 @@ final class DeviceDetailsViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
         stackView.alignment = .center
-        
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(stackView)
-        
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             stackView.topAnchor.constraint(equalTo: view.topAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
             view.heightAnchor.constraint(equalToConstant: 70)
         ])
-        
         view.layer.cornerRadius = 16
-        
-        
         view.backgroundColor = .gray // view.layer.shadowColor = .
         
         return view
@@ -225,8 +214,8 @@ final class DeviceDetailsViewController: UIViewController {
     }()
     
     
-    
-    
+    private let disposeBag = DisposeBag()
+    private let viewModel = DeviceDetailsViewModel()
 }
 
 

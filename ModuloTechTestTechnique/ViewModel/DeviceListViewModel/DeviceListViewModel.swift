@@ -11,7 +11,7 @@ import RxSwift
 final class DeviceListViewModel {
     private let networkService = NetworkService.shared
     
-    let title = "My Devices"
+    let title = Strings.myDevices
     
     var deviceViewModelsSubject = BehaviorSubject<[DeviceViewModel]>(value: [])
     var deviceViewModels: [DeviceViewModel] = [] {
