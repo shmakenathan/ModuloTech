@@ -9,10 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-//final class ControlDeviceOptionView: UIView {
-//
-//}
-
 final class DeviceDetailsViewController: UIViewController {
     
     var viewModel: DeviceViewModel?
@@ -313,13 +309,6 @@ final class DeviceDetailsViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
 }
-
-
-
-
-
-
-
 
 
 

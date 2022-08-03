@@ -155,9 +155,6 @@ final class DeviceViewModel {
     }
     
     
-    //---------
-    
-   
     
     private var rollerShutterStateDescription: String {
         let undefinedDescription = "Unknown"

@@ -31,13 +31,14 @@
 		D846706F2891B926004154E9 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846706E2891B926004154E9 /* Mode.swift */; };
 		D84670712891B936004154E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84670702891B936004154E9 /* User.swift */; };
 		D84670732891B954004154E9 /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84670722891B954004154E9 /* Adress.swift */; };
-		D87F543C2897D423005261A1 /* CountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543B2897D423005261A1 /* CountViewController.swift */; };
 		D87F543E28986726005261A1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543D28986726005261A1 /* Strings.swift */; };
 		D87F544028989E13005261A1 /* DeviceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543F28989E13005261A1 /* DeviceDetailsViewModel.swift */; };
 		D87F544228991F4B005261A1 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F544128991F4B005261A1 /* NavigationCoordinator.swift */; };
 		D87F5444289A0390005261A1 /* NavigationEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F5443289A0390005261A1 /* NavigationEventType.swift */; };
 		D87F5446289A03BA005261A1 /* MainNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F5445289A03BA005261A1 /* MainNavigationCoordinator.swift */; };
 		D87F5448289A03DB005261A1 /* NavigationCoordonating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F5447289A03DB005261A1 /* NavigationCoordonating.swift */; };
+		D87F544A289A9F38005261A1 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F5449289A9F38005261A1 /* DeviceService.swift */; };
+		D87F544C289A9F7E005261A1 /* DeviseServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F544B289A9F7E005261A1 /* DeviseServiceError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,13 +86,14 @@
 		D846706E2891B926004154E9 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		D84670702891B936004154E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D84670722891B954004154E9 /* Adress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
-		D87F543B2897D423005261A1 /* CountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewController.swift; sourceTree = "<group>"; };
 		D87F543D28986726005261A1 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		D87F543F28989E13005261A1 /* DeviceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewModel.swift; sourceTree = "<group>"; };
 		D87F544128991F4B005261A1 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 		D87F5443289A0390005261A1 /* NavigationEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEventType.swift; sourceTree = "<group>"; };
 		D87F5445289A03BA005261A1 /* MainNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationCoordinator.swift; sourceTree = "<group>"; };
 		D87F5447289A03DB005261A1 /* NavigationCoordonating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordonating.swift; sourceTree = "<group>"; };
+		D87F5449289A9F38005261A1 /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
+		D87F544B289A9F7E005261A1 /* DeviseServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviseServiceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +203,6 @@
 				D84670672891A62C004154E9 /* NavigationCoordinator */,
 				D846706028919F5E004154E9 /* DeviceListView */,
 				D846706128919F80004154E9 /* DeviceDetailsView */,
-				D87F543B2897D423005261A1 /* CountViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +219,8 @@
 		D846705E28919F2E004154E9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				D87F5449289A9F38005261A1 /* DeviceService.swift */,
+				D87F544B289A9F7E005261A1 /* DeviseServiceError.swift */,
 				D846705B28919F0B004154E9 /* NetworkService */,
 			);
 			path = Service;
@@ -432,7 +435,6 @@
 				D8466FF1288EC3FC004154E9 /* AppDelegate.swift in Sources */,
 				D87F5448289A03DB005261A1 /* NavigationCoordonating.swift in Sources */,
 				D87F544228991F4B005261A1 /* NavigationCoordinator.swift in Sources */,
-				D87F543C2897D423005261A1 /* CountViewController.swift in Sources */,
 				D84670692891B8CE004154E9 /* Device.swift in Sources */,
 				D846702A288EE28B004154E9 /* DevicesResponse.swift in Sources */,
 				D8467040289171B5004154E9 /* DeviceListTableViewCell.swift in Sources */,
@@ -444,10 +446,12 @@
 				D87F5444289A0390005261A1 /* NavigationEventType.swift in Sources */,
 				D846705D28919F1B004154E9 /* NetworkServiceError.swift in Sources */,
 				D87F544028989E13005261A1 /* DeviceDetailsViewModel.swift in Sources */,
+				D87F544A289A9F38005261A1 /* DeviceService.swift in Sources */,
 				D846705A28919EB2004154E9 /* DeviceListViewModel.swift in Sources */,
 				D846706F2891B926004154E9 /* Mode.swift in Sources */,
 				D87F5446289A03BA005261A1 /* MainNavigationCoordinator.swift in Sources */,
 				D84670662891A31D004154E9 /* DeviceViewModel.swift in Sources */,
+				D87F544C289A9F7E005261A1 /* DeviseServiceError.swift in Sources */,
 				D84670732891B954004154E9 /* Adress.swift in Sources */,
 				D8466FF3288EC3FC004154E9 /* SceneDelegate.swift in Sources */,
 			);
@@ -636,6 +640,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -663,6 +668,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
