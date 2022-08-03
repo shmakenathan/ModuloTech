@@ -34,6 +34,10 @@
 		D87F543C2897D423005261A1 /* CountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543B2897D423005261A1 /* CountViewController.swift */; };
 		D87F543E28986726005261A1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543D28986726005261A1 /* Strings.swift */; };
 		D87F544028989E13005261A1 /* DeviceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F543F28989E13005261A1 /* DeviceDetailsViewModel.swift */; };
+		D87F544228991F4B005261A1 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F544128991F4B005261A1 /* NavigationCoordinator.swift */; };
+		D87F5444289A0390005261A1 /* NavigationEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F5443289A0390005261A1 /* NavigationEventType.swift */; };
+		D87F5446289A03BA005261A1 /* MainNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F5445289A03BA005261A1 /* MainNavigationCoordinator.swift */; };
+		D87F5448289A03DB005261A1 /* NavigationCoordonating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F5447289A03DB005261A1 /* NavigationCoordonating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,10 @@
 		D87F543B2897D423005261A1 /* CountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewController.swift; sourceTree = "<group>"; };
 		D87F543D28986726005261A1 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		D87F543F28989E13005261A1 /* DeviceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewModel.swift; sourceTree = "<group>"; };
+		D87F544128991F4B005261A1 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		D87F5443289A0390005261A1 /* NavigationEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEventType.swift; sourceTree = "<group>"; };
+		D87F5445289A03BA005261A1 /* MainNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationCoordinator.swift; sourceTree = "<group>"; };
+		D87F5447289A03DB005261A1 /* NavigationCoordonating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordonating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +280,10 @@
 		D84670672891A62C004154E9 /* NavigationCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				D87F544128991F4B005261A1 /* NavigationCoordinator.swift */,
+				D87F5447289A03DB005261A1 /* NavigationCoordonating.swift */,
+				D87F5445289A03BA005261A1 /* MainNavigationCoordinator.swift */,
+				D87F5443289A0390005261A1 /* NavigationEventType.swift */,
 			);
 			path = NavigationCoordinator;
 			sourceTree = "<group>";
@@ -418,6 +430,8 @@
 			files = (
 				D8466FF5288EC3FC004154E9 /* DeviceListViewController.swift in Sources */,
 				D8466FF1288EC3FC004154E9 /* AppDelegate.swift in Sources */,
+				D87F5448289A03DB005261A1 /* NavigationCoordonating.swift in Sources */,
+				D87F544228991F4B005261A1 /* NavigationCoordinator.swift in Sources */,
 				D87F543C2897D423005261A1 /* CountViewController.swift in Sources */,
 				D84670692891B8CE004154E9 /* Device.swift in Sources */,
 				D846702A288EE28B004154E9 /* DevicesResponse.swift in Sources */,
@@ -427,10 +441,12 @@
 				D8467024288EDAD4004154E9 /* NetworkService.swift in Sources */,
 				D846703C288FF0FA004154E9 /* DeviceDetailsViewController.swift in Sources */,
 				D87F543E28986726005261A1 /* Strings.swift in Sources */,
+				D87F5444289A0390005261A1 /* NavigationEventType.swift in Sources */,
 				D846705D28919F1B004154E9 /* NetworkServiceError.swift in Sources */,
 				D87F544028989E13005261A1 /* DeviceDetailsViewModel.swift in Sources */,
 				D846705A28919EB2004154E9 /* DeviceListViewModel.swift in Sources */,
 				D846706F2891B926004154E9 /* Mode.swift in Sources */,
+				D87F5446289A03BA005261A1 /* MainNavigationCoordinator.swift in Sources */,
 				D84670662891A31D004154E9 /* DeviceViewModel.swift in Sources */,
 				D84670732891B954004154E9 /* Adress.swift in Sources */,
 				D8466FF3288EC3FC004154E9 /* SceneDelegate.swift in Sources */,

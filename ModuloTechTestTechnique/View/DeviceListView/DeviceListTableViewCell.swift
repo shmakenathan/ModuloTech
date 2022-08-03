@@ -43,8 +43,8 @@ final class DeviceListTableViewCell: UITableViewCell {
         let stackView = UIStackView(
             arrangedSubviews: [
                 iconImageView,
-                secondStackView,
-                UIView()
+                titleAndStateStackView,
+                goToDetailsIndicatorView
             ]
         )
         
@@ -54,14 +54,45 @@ final class DeviceListTableViewCell: UITableViewCell {
         stackView.spacing = 16
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // TODO: The following constraint create console warning - It should be solved
         NSLayoutConstraint.activate([
-            stackView.heightAnchor.constraint(equalToConstant: 100),
-            
+            stackView.heightAnchor.constraint(equalToConstant: 100)
         ])
         return stackView
     }()
     
-    private lazy var secondStackView: UIStackView = {
+    private let goToDetailsIndicatorView: UIView = {
+        let image = UIImage(systemName: "chevron.right")
+        let imageView = UIImageView(image: image)
+        imageView.tintColor = .lightGray
+        imageView.contentMode = .scaleAspectFit
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        
+        let containerView = UIView()
+        
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(imageView)
+        
+        let distanceFromBorder: CGFloat = 38.0
+        
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: distanceFromBorder),
+            imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -distanceFromBorder),
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor),
+            imageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            containerView.widthAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        
+        
+        
+        return containerView
+    }()
+    
+    private lazy var titleAndStateStackView: UIStackView = {
  
         let stackView = UIStackView(
             arrangedSubviews: [

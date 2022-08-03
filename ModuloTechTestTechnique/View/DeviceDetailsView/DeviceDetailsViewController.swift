@@ -9,13 +9,18 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+//final class ControlDeviceOptionView: UIView {
+//
+//}
+
 final class DeviceDetailsViewController: UIViewController {
     
-    var deviceViewModel: DeviceViewModel?
+    var viewModel: DeviceViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+ 
     }
     
     
@@ -38,7 +43,7 @@ final class DeviceDetailsViewController: UIViewController {
     
     private lazy var iconAndTitleStackView: UIStackView = {
         let titleLabel = UILabel()
-        titleLabel.text = deviceViewModel?.deviceName
+        titleLabel.text = viewModel?.deviceName
         titleLabel.textAlignment = .center
         let stackView = UIStackView(
             arrangedSubviews: [
@@ -56,9 +61,23 @@ final class DeviceDetailsViewController: UIViewController {
     
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
-        if let iconImageName = deviceViewModel?.iconImageName {
+        if let iconImageName = viewModel?.iconImageName {
             imageView.image = UIImage(named: iconImageName)
         }
+        
+        if let viewModel = viewModel {
+            viewModel.isOnRelay
+                .subscribe(on: MainScheduler.instance)
+                .map { _ in
+                    let iconImageName = viewModel.iconImageName ?? ""
+                    let image = UIImage(named: iconImageName)!
+                    return image
+                }
+                .bind(to: imageView.rx.image)
+                .disposed(by: disposeBag)
+        }
+        
+        
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -67,32 +86,26 @@ final class DeviceDetailsViewController: UIViewController {
         return imageView
     }()
     
+    private func getAssociatedView(from deviceControlOptionType: DeviceControlOptionType) -> UIView {
+        switch deviceControlOptionType {
+        case .slider:
+            return sliderControlView
+        case .stepper:
+            return stepperControlView
+        case .toggleSwitch:
+            return switchControlView
+        }
+    }
+    
     private lazy var steeringControlsStackView: UIStackView = {
         let stackView = UIStackView()
-        switch deviceViewModel?.device.productType {
-        case .none:
-            break
-        case .heater:
-            stackView.addArrangedSubviews(
-                [
-                    switchControlView,
-                    stepperControlView
-                ]
-            )
-        case .light:
-            stackView.addArrangedSubviews(
-                [
-                    switchControlView,
-                    sliderControlView
-                ]
-            )
-        case .rollerShutter:
-            stackView.addArrangedSubviews(
-                [
-                    sliderControlView
-                ]
-            )
+        if let viewModel = viewModel {
+            let controlViews = viewModel.deviceControlOptionTypes.map {
+                getAssociatedView(from: $0)
+            }
+            stackView.addArrangedSubviews(controlViews)
         }
+
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .fill
@@ -102,23 +115,45 @@ final class DeviceDetailsViewController: UIViewController {
     }()
     
     
+
+    
     private lazy var switchControlView: UIView = {
-        let view = UIView()
+        let view = createControlContainerView()
         let controlLabel = UILabel()
         controlLabel.text = "On/Off"
         controlLabel.textAlignment = .left
+        
         let controlSwitch = UISwitch()
-        controlSwitch.isOn = deviceViewModel?.device.mode == .on
+        
+     
+        
+
+        
+        if let viewModel = viewModel {
+            
+            controlSwitch.rx
+                .controlEvent(.touchUpInside)
+                .withLatestFrom(controlSwitch.rx.value)
+                .subscribe(onNext: { _ in viewModel.toggleSwitch() })
+                .disposed(by: disposeBag)
+            
+            viewModel.isOnRelay
+                .subscribe(on: MainScheduler.instance)
+                .bind(to: controlSwitch.rx.isOn)
+                .disposed(by: disposeBag)
+        }
+        
         let stackView = UIStackView(arrangedSubviews: [
             controlLabel,
             controlSwitch
         ])
         
-        
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
         stackView.alignment = .center
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
@@ -127,15 +162,13 @@ final class DeviceDetailsViewController: UIViewController {
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             view.heightAnchor.constraint(equalToConstant: 70)
         ])
-        view.layer.cornerRadius = 16
-        view.backgroundColor = .gray // view.layer.shadowColor = .
         
         return view
         
     }()
     
     private lazy var sliderControlView: UIView = {
-        let view = UIView()
+        let view = createControlContainerView()
         
         let controlBeginLabel = UILabel()
         controlBeginLabel.text = "0"
@@ -145,6 +178,20 @@ final class DeviceDetailsViewController: UIViewController {
         controlEndLabel.textAlignment = .right
         
         let controlSlider = UISlider()
+        
+        if let viewModel = viewModel {
+            controlSlider.rx.value
+                .skip(1)
+                .map { Int($0 * 100) }
+                .bind { viewModel.assignNewSliderValue(value: $0) }
+                .disposed(by: disposeBag)
+            
+            viewModel.sliderValueRelay
+                .subscribe(on: MainScheduler.instance)
+                .map { (Float($0) / 100.0) }
+                .bind(to: controlSlider.rx.value)
+                .disposed(by: disposeBag)
+        }
         
         
         let stackView = UIStackView(arrangedSubviews: [
@@ -164,8 +211,6 @@ final class DeviceDetailsViewController: UIViewController {
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            //controlEndLabel.widthAnchor.constraint(equalToConstant: 20),
-           // controlBeginLabel.widthAnchor.constraint(equalToConstant: 20),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             stackView.topAnchor.constraint(equalTo: view.topAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
@@ -174,28 +219,67 @@ final class DeviceDetailsViewController: UIViewController {
             view.heightAnchor.constraint(equalToConstant: 70)
         ])
         
-        view.layer.cornerRadius = 16
-        
-       
+
         
         return view
     }()
     
     
     private lazy var stepperControlView: UIView = {
-        let view = UIView()
+        let view = createControlContainerView()
         let temperatureLabel = UILabel()
         temperatureLabel.font = UIFont.systemFont(ofSize: 20)
-        temperatureLabel.text = "29"
         
-        let stepper = UIStepper()
+
+        
+        let minusButton = UIButton()
+        minusButton.setTitle("-", for: .normal)
+        minusButton.setTitleColor(.black, for: .normal)
+        minusButton.layer.borderWidth = 1
+        minusButton.layer.borderColor = UIColor.black.cgColor
+        
+        let plusButton = UIButton()
+        plusButton.setTitle("+", for: .normal)
+        plusButton.setTitleColor(.black, for: .normal)
+        plusButton.layer.borderWidth = 1
+        plusButton.layer.borderColor = UIColor.black.cgColor
+        
+        
+        let stepperStackView = UIStackView(arrangedSubviews: [minusButton, plusButton])
+        stepperStackView.axis = .horizontal
+        stepperStackView.distribution = .fillEqually
+        
+        stepperStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         let stackView = UIStackView(arrangedSubviews: [
             temperatureLabel,
-            stepper
+            stepperStackView
             
         ])
         
-        stackView.axis = .vertical
+        
+        if let viewModel = viewModel {
+            minusButton.rx
+                .tap
+                .bind { viewModel.decreaseStepperValue() }
+                .disposed(by: disposeBag)
+            
+            plusButton.rx
+                .tap
+                .bind { viewModel.increaseStepperValue() }
+                .disposed(by: disposeBag)
+
+          
+
+            viewModel.stepperValueRelay
+                .subscribe(on: MainScheduler.instance)
+                .map { "\($0)°C" }
+                .bind(to: temperatureLabel.rx.text)
+                .disposed(by: disposeBag)
+        }
+        
+        stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.spacing = 5
         stackView.distribution = .fill
@@ -208,14 +292,26 @@ final class DeviceDetailsViewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: view.topAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            temperatureLabel.heightAnchor.constraint(equalToConstant: 80)
+            view.heightAnchor.constraint(equalToConstant: 70),
+            stepperStackView.widthAnchor.constraint(equalToConstant: 100)
         ])
+        
+      
+        
         return view
     }()
     
+    private func createControlContainerView() -> UIView {
+        let view = UIView()
+        view.layer.cornerRadius = 16
+        view.backgroundColor = .black.withAlphaComponent(0.08)
+        view.layer.shadowRadius = 10
+        view.layer.shadowColor = UIColor.lightGray.cgColor
+        return view
+    }
+    
     
     private let disposeBag = DisposeBag()
-    private let viewModel = DeviceDetailsViewModel()
 }
 
 

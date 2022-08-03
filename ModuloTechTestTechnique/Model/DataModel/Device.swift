@@ -4,11 +4,12 @@
 //
 //  Created by Nathan on 27/07/2022.
 //
-struct Device: Codable {
+class Device: Codable {
     let id: Int
     let deviceName: String
-    let intensity: Int?
-    let mode: Mode?
+    var intensity: Int?
+    var mode: Mode?
     let productType: ProductType
-    let position, temperature: Int?
+    var position: Int?
+    var temperature: Double?
 }

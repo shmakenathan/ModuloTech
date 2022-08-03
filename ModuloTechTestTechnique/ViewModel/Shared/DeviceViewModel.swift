@@ -6,16 +6,107 @@
 //
 
 import Foundation
+import RxRelay
+
+
+enum DeviceControlOptionType {
+    case slider
+    case stepper
+    case toggleSwitch
+}
+
 
 
 final class DeviceViewModel {
     
     init(device: Device) {
         self.device = device
+        isOnRelay.accept(device.mode == .on)
+        stepperValueRelay.accept(Double(device.temperature ?? 0))
+        sliderValueRelay.accept(sliderValue)
     }
     
-    let device: Device
     
+    private var sliderValue: Int {
+        switch device.productType {
+        case .rollerShutter: return device.position ?? 0
+        case .light: return device.intensity ?? 0
+        case .heater: return 0
+        }
+    }
+    
+    
+    let sliderValueRelay = BehaviorRelay<Int>(value: 0)
+    
+    
+    func assignNewSliderValue(value: Int) {
+        switch device.productType {
+        case .rollerShutter:
+            device.position = value
+        case .light:
+           device.intensity = value
+        case .heater:
+            break
+        }
+        
+
+        sliderValueRelay.accept(sliderValue)
+    }
+    
+    let stepperValueRelay = BehaviorRelay<Double>(value: 20)
+    
+    private let stepperIncrementValue = 0.5
+    private let maxStepperValue = 28.0
+    private let minStepperValue = 7.0
+    
+    func increaseStepperValue() {
+        
+  
+        
+        guard let deviceTemperature = device.temperature,
+              deviceTemperature <= (maxStepperValue - stepperIncrementValue)
+        else {
+            return
+
+        }
+       
+        device.temperature = deviceTemperature + 0.5
+        stepperValueRelay.accept(Double(device.temperature ?? 0))
+    }
+    
+    func decreaseStepperValue() {
+        guard let deviceTemperature = device.temperature,
+              deviceTemperature >= (minStepperValue + stepperIncrementValue)
+        else {
+            return
+          
+        }
+       
+        device.temperature = deviceTemperature - 0.5
+        stepperValueRelay.accept(Double(device.temperature ?? 0))
+    }
+    
+    
+    let isOnRelay = BehaviorRelay<Bool>(value: false)
+    private let device: Device
+    
+    func toggleSwitch() {
+        let newMode: Mode = device.mode == .off ? .on : .off
+        device.mode = newMode
+        let isOn = newMode == .on
+        isOnRelay.accept(isOn)
+    }
+    
+    
+    
+    
+    var deviceControlOptionTypes: [DeviceControlOptionType] {
+        switch device.productType {
+        case .heater: return [.toggleSwitch, .stepper]
+        case .light: return [.toggleSwitch, .slider]
+        case .rollerShutter: return [.slider]
+        }
+    }
     
     var deviceName: String {
         device.deviceName
@@ -99,7 +190,7 @@ final class DeviceViewModel {
         guard let mode = device.mode else { return undefinedDescription }
         
         switch mode {
-        case .on: return "On at \(device.temperature?.description ?? "--")°C"
+        case .on: return Strings.onAt + "\(device.temperature?.description ?? "--")°C"
         case .off: return Strings.off
         }
     }

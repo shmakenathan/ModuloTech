@@ -6,4 +6,10 @@
   
 */
 
-"error_failed_ingredient_is_empty" = "You have to add ingredient";
+"my_devices" ="My Devices";
+"off" = "Off";
+"opened_At" = "Opened at";
+"opened" = "Opened";
+"closed" = "Closed";
+"on_At" = "On at";
+"on" = "On";

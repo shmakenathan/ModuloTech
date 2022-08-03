@@ -11,8 +11,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class DeviceListViewController: UIViewController {
+final class DeviceListViewController: UIViewController, NavigationCoordinating {
+
+    
     // MARK: - INTERNAL
+    
+    // MARK: Internal - Properties
+    
+    var navigationCoordinator: NavigationCoordinator?
     
     // MARK: Internal - Methods
     
@@ -20,8 +26,11 @@ final class DeviceListViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.fetchDevicesData()
-        
     }
     
     // MARK: - PRIVATE
@@ -51,10 +60,9 @@ final class DeviceListViewController: UIViewController {
         tableView.rx
             .modelSelected(DeviceViewModel.self)
             .subscribe(onNext: { [weak self] deviceViewModel in
-                // TODO: Should be handled by NavigationCoordinator
-                let destinationViewController = DeviceDetailsViewController()
-                destinationViewController.deviceViewModel = deviceViewModel
-                self?.navigationController?.pushViewController(destinationViewController, animated: true)
+                self?.navigationCoordinator?.eventOccurred(
+                    eventType: .deviceInListTapped(viewModelTapped: deviceViewModel)
+                )
             })
             .disposed(by: disposeBag)
             

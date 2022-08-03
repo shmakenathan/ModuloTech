@@ -7,4 +7,10 @@
 */
 
 
-"error_failed_ingredient_is_empty" = "Vous devez ajouter un ingrédient";
+"my_devices" = "Mes Appareils";
+"off" = "A l'arrêt";
+"opened_At" = "Ouvert à ";
+"opened" = "Ouvert";
+"closed" = "Fermé";
+"on_At" = "Marche à ";
+"on" = "En marche";

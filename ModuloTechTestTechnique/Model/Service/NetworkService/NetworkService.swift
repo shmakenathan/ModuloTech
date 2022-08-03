@@ -13,30 +13,6 @@ import Foundation
 final class NetworkService {
     
     static let shared = NetworkService()
-    
-    //private func parseJSON() {
-    //    guard let path = Bundle.main.path(forResource: "Data", ofType: "json") else {
-    //        return
-    //    }
-    //    let url = URL(fileURLWithPath: path)
-    //    var result : DevicesResponse?
-    //    do {
-    //        let jsonData = try Data(contentsOf: url)
-    //        result =  try JSONDecoder().decode(DevicesResponse.self, from: jsonData)
-    //        if let result = result {
-    //            return result
-    //            print(result)
-    //        } else {
-    //            print("erreur")
-    //        }
-    //        return
-    //    } catch {
-    //        print("pio")
-    //    }
-    //}
-    
-    
-    
     let urlSession = URLSession(configuration: .default)
     let jsonDecoder = JSONDecoder()
     
